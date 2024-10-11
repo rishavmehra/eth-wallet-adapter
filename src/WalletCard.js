@@ -29,6 +29,12 @@ const WalletCard = () => {
         }
     };
 
+    const disconnectWalletHandler = () => {
+        setDefaultAccount(null);
+        setUserBalance(null);
+        setErrorMessage(null);
+    };
+
     useEffect(() => {
         document.body.style.margin = '0';
     }, []);
@@ -36,16 +42,16 @@ const WalletCard = () => {
     return (
         <div style={styles.container}>
             <div style={styles.card}>
-                <h3 style={styles.heading}>Welcome to a Decentralized Application</h3>
+                <h3 style={styles.heading}>ETH Wallet Adapter</h3>
                 <Button
                     variant="contained"
                     style={{
                         ...styles.button,
                         backgroundColor: defaultAccount ? "#A5CC82" : "#4CAF50",
                     }}
-                    onClick={connectWalletHandler}
+                    onClick={defaultAccount ? disconnectWalletHandler : connectWalletHandler}
                 >
-                    {defaultAccount ? "Connected!" : "Connect Wallet"}
+                    {defaultAccount ? "Disconnect Wallet" : "Connect Wallet"}
                 </Button>
                 <div style={styles.displayAccount}>
                     <h4 style={styles.walletAddress}>Address: {defaultAccount || "Not connected"}</h4>
@@ -99,10 +105,6 @@ const styles = {
         cursor: 'pointer',
         boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)',
         transition: 'background 0.3s ease, box-shadow 0.3s ease',
-        ':hover': {
-            backgroundColor: '#81C784',
-            boxShadow: '0 8px 20px rgba(0, 0, 0, 0.25)',
-        },
     },
     displayAccount: {
         marginTop: '20px',
@@ -126,4 +128,3 @@ const styles = {
 };
 
 export default WalletCard;
-
