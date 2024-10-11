@@ -1,0 +1,76 @@
+/* WalletCard.css */
+
+/* Reset default margin and padding for body and html */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #c3ec52, #0ba29d);
+}
+
+.card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.heading {
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+}
+
+.button {
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: #81C784;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.displayAccount {
+    margin-top: 20px;
+}
+
+.walletAddress {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.balanceDisplay {
+    margin-top: 10px;
+}
+
+.balanceText {
+    font-size: 18px;
+    color: #2E7D32;
+}
+
+.errorMessage {
+    color: red;
+    margin-top: 20px;
+}
