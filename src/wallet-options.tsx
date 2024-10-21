@@ -1,13 +1,12 @@
 import * as React from 'react'
 import { Connector, useConnect } from 'wagmi'
 
-
 export function WalletOptions() {
-    const { connectors, connect } = useConnect()
+  const { connectors, connect } = useConnect()
 
-    return connectors.map((connector)=>(
-        <button key={connector.uid} onClick={()=>connect({connector})}>
-            {connector.name}
-        </button>
-    ))
+  return connectors.map((connector) => (
+    <button key={connector.uid} onClick={() => connect({ connector })}>
+      {connector.name}
+    </button>
+  ))
 }
